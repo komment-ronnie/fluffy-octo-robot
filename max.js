@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Home, Plus, Settings } from "lucide-react";
 import {usePathname, useRouter} from "next/navigation";
 
+
 export const Sidebar = () => {
     const pathname = usePathname();
     const router = useRouter();
