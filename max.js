@@ -61,6 +61,15 @@ export const Sidebar = () => {
                  * @param { string } className - CSS class name to be applied to the component element,
                  * which is used to style the layout and appearance of the navigation links.
                  */}
+                {/**
+                 * @description maps a route to a component and handles transition between routes by
+                 * providing smooth animation when hovering over component's parent element. It takes
+                 * `key`, `onClick`, and `className` parameters and returns an element that provides
+                 * event handling and class naming functionality.
+                 * 
+                 * @param { string } className - class name to be assigned to the element that is
+                 * clicked, allowing for styling and identification purposes.
+                 */}
                 <div className="space-y-2">
                     {/**
                      * @description maps a route to a component and handles the transition between routes
@@ -85,6 +94,30 @@ export const Sidebar = () => {
                      * 		+ `label`: a string label for the link, usually displayed next to the icon.
                      * 
                      * @param { string } className - class name to assign to the clicked element.
+                     */}
+                    {/**
+                     * @description renders a clickable component with a routes icon and label, handling
+                     * navigation to the provided pathname when clicked.
+                     * 
+                     * @param { string } key - current URL and is used to determine the background color
+                     * of the component when the URL matches the current one.
+                     * 
+                     * @param { functions. } onClick - 4th event listener to trigger when the element is
+                     * clicked, specifically navigating to the linked URL upon activation.
+                     * 
+                     * 		- `key`: This property specifies the unique identifier of the `div` element.
+                     * 		- `onClick`: This event is triggered when the user clicks on the element. It can
+                     * be used to call the `onNavigate()` function with the URL of the destination page
+                     * as an argument.
+                     * 		- `route`: This property contains information about the current route, including
+                     * the URL and any additional data.
+                     * 		- `pro`: This property specifies the pathname of the current route.
+                     * 		- `cn`: This property is used to apply class names to the element. It can be
+                     * used to set styles, add interactivity, or attach event listeners.
+                     * 
+                     * @param { string } className - CSS class to apply to the element, allowing for the
+                     * customization of the element's layout and appearance based on its position within
+                     * the component tree.
                      */}
                     {routes.map((route)=>(
                         <div key={route.href} onClick={()=> onNavigate(route.href, route.pro)} className={cn("text-muted-foreground text-xs group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-primary hover:bg-primary/10 rounded-lg transition", pathname === route.href && "bg-primary/10 text-primary")}>

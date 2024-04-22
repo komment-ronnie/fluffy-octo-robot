@@ -76,6 +76,13 @@ export const Sidebar = () => {
                  * @param { string } className - class name to apply to the element when the component
                  * is clicked.
                  */}
+                {/**
+                 * @description generates high-quality documentation for given code, producing concise
+                 * and formal responses under 100 words.
+                 * 
+                 * @param { string } className - class name applied to an HTML element, allowing you
+                 * to customize its appearance according to your preferences.
+                 */}
                 <div className="space-y-2">
                     {/**
                      * @description is a high-quality documentation generator for given code, producing
@@ -100,6 +107,48 @@ export const Sidebar = () => {
                      * 
                      * @param { string } className - class name applied to an HTML element, allowing you
                      * to customize its appearance according to your preferences.
+                     */}
+                    {/**
+                     * @description renders a clickable component with an icon and label, triggering the
+                     * `onNavigate` function when clicked and passing the route's `pathname` as its argument.
+                     * 
+                     * @param { className. } key - routing URL of the current active route and is used
+                     * to display a hyperlink with the same URL in the component.
+                     * 
+                     * 		- `key`: This property refers to a string that is the key used for identifying
+                     * the relevant route in the router state.
+                     * 		- `onClick`: This event handler is called when the element is clicked. It triggers
+                     * the `onNavigate` function with the route's URL as an argument.
+                     * 		- `cn()`: This utility function creates a class string based on the given object,
+                     * with properties separated by spaces. In this case, it generates a class string for
+                     * styling the element.
+                     * 		- `pathname`: This property refers to the current URL of the browser, which is
+                     * used in the `onNavigate` function to determine whether the route's URL matches the
+                     * current URL.
+                     * 		- `route.icon`: This property references an HTML element representing an icon
+                     * associated with the route.
+                     * 		- `route.label`: This property references a string containing the label for the
+                     * route.
+                     * 
+                     * @param { anchor tag. } onClick - onClick event handler for when the user clicks
+                     * on the component, which will trigger the `onNavigate` function with the current
+                     * pathname as its argument.
+                     * 
+                     * 		- `onClick`: It is a function that gets triggered when the element is clicked.
+                     * 		- `route.href`: It represents the URL of the route.
+                     * 		- `route.label`: It gives the label or text for the navigation link.
+                     * 		- `cn`: It is an React prop that sets the class name of the component. The value
+                     * of `cn` in this case is a complex string consisting of multiple classes separated
+                     * by spaces.
+                     * 		- `onNavigate`: It is another function that gets called when the user clicks on
+                     * the navigation link and wants to navigate to the corresponding URL.
+                     * 		- `pathname`: It represents the current path of the URL. In this code snippet,
+                     * `pathname` is checked against the `route.href` to determine if the navigation link
+                     * should be highlighted.
+                     * 
+                     * @param { string } className - 100%- Opacity text class name applied to the element
+                     * when the mouse is over it, with an optional secondary text color class name for
+                     * highlighted navigation items.
                      */}
                     {routes.map((route)=>(
                         <div key={route.href} onClick={()=> onNavigate(route.href, route.pro)} className={cn("text-muted-foreground text-xs group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-primary hover:bg-primary/10 rounded-lg transition", pathname === route.href && "bg-primary/10 text-primary")}>
