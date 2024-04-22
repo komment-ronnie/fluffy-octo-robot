@@ -62,13 +62,11 @@ export const Sidebar = () => {
                  * which is used to style the layout and appearance of the navigation links.
                  */}
                 {/**
-                 * @description maps a route to a component and handles transition between routes by
-                 * providing smooth animation when hovering over component's parent element. It takes
-                 * `key`, `onClick`, and `className` parameters and returns an element that provides
-                 * event handling and class naming functionality.
+                 * @description maps a route to a component and provides a smooth animation when
+                 * hovering over the component's parent element, triggering an event handler when clicked.
                  * 
-                 * @param { string } className - class name to be assigned to the element that is
-                 * clicked, allowing for styling and identification purposes.
+                 * @param { string } className - class name to assign to the clicked element after a
+                 * navigate action has been triggered.
                  */}
                 <div className="space-y-2">
                     {/**
@@ -96,28 +94,26 @@ export const Sidebar = () => {
                      * @param { string } className - class name to assign to the clicked element.
                      */}
                     {/**
-                     * @description renders a clickable component with a routes icon and label, handling
-                     * navigation to the provided pathname when clicked.
+                     * @description maps a URL to its associated route object, making it possible for
+                     * navigation between different sections of the application.
                      * 
-                     * @param { string } key - current URL and is used to determine the background color
-                     * of the component when the URL matches the current one.
+                     * @param { string } key - unique identifier for each element, allowing the component
+                     * to keep track of which element is being interacted with and trigger the appropriate
+                     * action when clicked.
                      * 
-                     * @param { functions. } onClick - 4th event listener to trigger when the element is
-                     * clicked, specifically navigating to the linked URL upon activation.
+                     * @param { `Event`. } onClick - click event handler for the component, and when it
+                     * is called, it calls the `onNavigate()` function with the current URL and property
+                     * as arguments.
                      * 
-                     * 		- `key`: This property specifies the unique identifier of the `div` element.
-                     * 		- `onClick`: This event is triggered when the user clicks on the element. It can
-                     * be used to call the `onNavigate()` function with the URL of the destination page
-                     * as an argument.
-                     * 		- `route`: This property contains information about the current route, including
-                     * the URL and any additional data.
-                     * 		- `pro`: This property specifies the pathname of the current route.
-                     * 		- `cn`: This property is used to apply class names to the element. It can be
-                     * used to set styles, add interactivity, or attach event listeners.
+                     * 		- `onClick`: This is the event that will be triggered when the user clicks on
+                     * the element. It is a functional parameter with a signature of `(event: Event) =>
+                     * void`.
+                     * 		- `onNavigate`: This is the function that will be called when the user clicks
+                     * on the element, passing in the current URL `route.href` as its argument. It has a
+                     * signature of `(url: string) => void`.
                      * 
-                     * @param { string } className - CSS class to apply to the element, allowing for the
-                     * customization of the element's layout and appearance based on its position within
-                     * the component tree.
+                     * @param { string } className - CSS class name for the element being clicked, which
+                     * can be used to customize its appearance based on the user's action.
                      */}
                     {routes.map((route)=>(
                         <div key={route.href} onClick={()=> onNavigate(route.href, route.pro)} className={cn("text-muted-foreground text-xs group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-primary hover:bg-primary/10 rounded-lg transition", pathname === route.href && "bg-primary/10 text-primary")}>
