@@ -1,0 +1,38 @@
+[
+  {
+    "name": "test.js",
+    "path": "test.js",
+    "content": {
+      "structured": {
+        "description": "And invokes a function named `fn`. The function uses the console object from the Node.js package to log the number 0 to the output. This operation is performed when the `fn` function is called.",
+        "items": [
+          {
+            "id": "8fae7ff7-710e-b7bc-8d4e-2f719cd5a132",
+            "ancestors": [],
+            "description": "Logs \"0\" to the console when called. It is a constant function, meaning its behavior does not change during execution. The arrow function syntax defines an anonymous function that immediately returns undefined and logs the specified value.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "fn();\n",
+              "description": "\nThis will output \"0\" to the console."
+            },
+            "name": "fn",
+            "location": {
+              "start": 4,
+              "insert": 1,
+              "offset": " ",
+              "indent": 0,
+              "comment": {
+                "start": 0,
+                "end": 3
+              }
+            },
+            "item_type": "function",
+            "length": 8,
+            "docLength": 3
+          }
+        ]
+      }
+    }
+  }
+]
